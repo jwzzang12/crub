@@ -9,14 +9,14 @@
   <body>
     <h1>나는 list ejs 입니다.</h1>
     <a href="/write">입력</a>
-
+    <div><%= list[5].subject %></div>
     <h2><%= title %></h2>
     <ul>
       <!-- <% for(let i=0;i<list.length;i++){ %>
         <li><%= list[i].subject %></li>
         <% } %> -->
       <% list.forEach((item,idx)=>{ %>
-      <li><a href="/detail/<%= item.subject %>"><%= item.subject %></a></li>
+      <li><a href="/detail/<%= item.no %>"><%= item.subject %></a></li>
       <% }) %>
     </ul>
   </body>
