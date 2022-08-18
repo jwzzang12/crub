@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>자유게시판</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/list.css" />
   </head>
   <body>
-    <h1>나는 list ejs 입니다.</h1>
-    <a href="/write">입력</a>
-    <div><%= list[5].subject %></div>
-    <h2><%= title %></h2>
-    <ul>
-      <!-- <% for(let i=0;i<list.length;i++){ %>
+    <div id="main">
+      <div class="board">
+        <img src="/images/bulletin-board.jpg" alt="" />
+        <ul>
+          <!-- <% for(let i=0;i<list.length;i++){ %>
         <li><%= list[i].subject %></li>
         <% } %> -->
-      <% list.forEach((item,idx)=>{ %>
-      <li><a href="/detail/<%= item.no %>"><%= item.subject %></a></li>
-      <% }) %>
-    </ul>
+          <% list.forEach((item,idx)=>{ %>
+          <li class="memo">
+            <!-- <a href="/detail/<%= item.no %>"><%= item.subject %></a> -->
+            <div class="contents"><%= item.contents %></div>
+            <div class="name"><%= item.subject %></div>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="write"><a href="/write">글쓰기</a></div>
+    </div>
   </body>
 </html>

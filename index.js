@@ -13,7 +13,7 @@ MongoClient.connect(process.env.MONGO_URL, { useUnifiedTopology: true }, (err, c
   }
   db = client.db("crudapp");
 });
-
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: false }));
 //post 방식으로 데이터를 넘겨 받기 위해서 필요한 것
 app.set("view engine", "ejs");

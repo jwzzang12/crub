@@ -11,8 +11,14 @@
   1. ajax
   2. form 태그 -->
     <form action="/add" method="POST">
-      <input type="text" name="subject" id="subject" />
-      <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+      <div>
+        <span>이름</span>
+        <input type="text" name="subject" id="subject" />
+      </div>
+      <div>
+        <span>내용</span>
+        <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+      </div>
       <button>send</button>
     </form>
     <!-- form 태그 안에서는 id 보다 name이 더 중요하다 -->
