@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 app.get("/write", (req, res) => {
-  // res.sendFile(path.join(__dirname, "public/html/write.html"));
   res.render("write");
 });
 app.post("/add", (req, res) => {
@@ -48,17 +47,6 @@ app.post("/add", (req, res) => {
       });
     });
   });
-
-  // res.sendFile(path.join(__dirname, "public/html/result.html"));
-
-  //node에서는 브라우저 스크립트가 작동하지 않기 때문에 알림창과 같은 브라우저 스크립트를
-  //사용하고 싶으면 이렇게 하는 수 밖에 없음
-
-  // res.send, res.redirect 동시에 쓸 수 없음
-  // 이유는 send를 통해 데이터 보내고 나면 종료
-
-  // 1. db 접속
-  // 2. 데이터 밀어넣기
 });
 //데이터를 밀어넣을떄
 app.get("/list", (req, res) => {
@@ -80,10 +68,10 @@ app.get("/detail/:no", (req, res) => {
     }
     if (result) {
       res.render("detail", { subject: result.subject, contents: result.contents });
+      //받은 데이터를 단순히 뿌릴 때
     }
   });
 });
-//받은 데이터를 단순히 뿌릴 때
 app.listen(PORT, () => {
   console.log(`${PORT}에서 서버 대기 중`);
 });

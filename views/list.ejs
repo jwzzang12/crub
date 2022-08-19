@@ -13,12 +13,8 @@
       <div class="board">
         <img src="/images/bulletin-board.jpg" alt="" />
         <ul>
-          <!-- <% for(let i=0;i<list.length;i++){ %>
-        <li><%= list[i].subject %></li>
-        <% } %> -->
           <% list.forEach((item,idx)=>{ %>
           <li class="memo">
-            <!-- <a href="/detail/<%= item.no %>"><%= item.subject %></a> -->
             <div class="contents"><%= item.contents %></div>
             <div class="name"><%= item.subject %></div>
           </li>
